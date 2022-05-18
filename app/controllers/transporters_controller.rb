@@ -3,6 +3,12 @@
 class TransportersController < ApplicationController
   before_action :set_transporter, only: %i[show]
 
+  def index
+    @transporters = Transporter.all
+
+    flash.now[:notice] = 'Não existem transportadoras cadastradas.' if @transporters.empty?
+  end
+
   def show; end
 
   def new
