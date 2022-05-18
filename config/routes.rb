@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :transporters, only: %i[show new create]
+  resources :transporters, only: %i[index show new create]
 end
