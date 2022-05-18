@@ -1,0 +1,20 @@
+<h2>Transportadoras</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Domínio</th>
+      <th>CNPJ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transporters.each do |transporter| %>
+    <tr>
+      <td><%= link_to transporter.corporate_name, transporter %></td>
+      <td><%= transporter.domain %></td>
+      <td><%= transporter.registration_number %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
