@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      transporter: 'Transpotadora'
+    attributes:
+      transporter:
+        corporate_name: 'Nome Fantasia'
+        brand_name: 'Razão Social'
+        registration_number: 'CNPJ'
+        full_address: 'Endereço'
+        domain: 'Domínio'
