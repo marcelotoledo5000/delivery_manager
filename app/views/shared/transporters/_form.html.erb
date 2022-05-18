@@ -1,0 +1,31 @@
+<<div>
+  <% if transporter.errors.any? %>
+    <p>Verifique os erros abaixo:</p>
+    <ul>
+      <% transporter.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<%= form_with model: transporter do |form| %>
+  <div>
+    <%= form.text_field :corporate_name, placeholder: 'Nome Fantasia:' %><br>
+  </div>
+  <div>
+    <%= form.text_field :brand_name, placeholder: 'Razão Social:' %><br>
+  </div>
+  <div>
+    <%= form.text_field :registration_number, placeholder: 'CNPJ:' %><br>
+  </div>
+   <div>
+    <%= form.text_field :domain, placeholder: 'Domínio:' %><br>
+  </div>
+  <div>
+    <%= form.text_field :full_address, placeholder: 'Endereço:' %><br>
+  </div>
+  <div>
+    <%= form.submit 'Cadastrar Transportadora' %>
+  </div>
+<% end %>
