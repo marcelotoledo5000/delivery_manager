@@ -1,9 +1,13 @@
-<h2>Transportadora <%= @transporter.brand_name %></h2>
+<h2>Transportadora: <%= @transporter.brand_name %></h2>
 
 <div>
-  <strong>Nome Fantasia:</strong> <%= @transporter.corporate_name %>
-  <strong>Razão Social:</strong> <%= @transporter.brand_name %>
-  <strong>CNPJ:</strong> <%= @transporter.registration_number %>
-  <strong>Endereço:</strong> <%= @transporter.full_address %>
+  <strong>Nome Fantasia:</strong> <%= @transporter.corporate_name %><br>
+  <strong>Razão Social:</strong> <%= @transporter.brand_name %><br>
+  <strong>CNPJ:</strong> <%= @transporter.registration_number %><br>
+  <strong>Endereço:</strong> <%= @transporter.full_address %><br>
   <strong>Domínio:</strong> <%= @transporter.domain %>
+</div><br>
+<div>
+  <%= link_to 'Editar transportadora', edit_transporter_path(@transporter) %><br>
+  <%= link_to 'Voltar', transporters_path %>
 </div>

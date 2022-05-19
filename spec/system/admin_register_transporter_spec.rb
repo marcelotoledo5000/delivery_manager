@@ -3,6 +3,20 @@
 require 'rails_helper'
 
 describe 'Admin register a transporter' do
+  it 'from index page' do
+    visit transporters_path
+    click_on 'Nova Transportadora'
+
+    expect(page).to have_current_path new_transporter_path
+    expect(page).to have_field 'Nome Fantasia:'
+    expect(page).to have_field 'Razão Social:'
+    expect(page).to have_field 'Domínio:'
+    expect(page).to have_field 'CNPJ:'
+    expect(page).to have_field 'Endereço:'
+    expect(page).to have_button 'Criar Transportadora'
+    expect(page).to have_link 'Voltar'
+  end
+
   it 'with valid params' do
     attributes = build(:transporter)
 
@@ -12,7 +26,7 @@ describe 'Admin register a transporter' do
     fill_in 'Domínio:', with: attributes.domain
     fill_in 'CNPJ:', with: attributes.registration_number
     fill_in 'Endereço:', with: attributes.full_address
-    click_on 'Cadastrar Transportadora'
+    click_on 'Criar Transportadora'
 
     expect(page).to have_current_path transporter_path(Transporter.last.id)
     expect(page).to have_content 'Transportadora cadastrada com sucesso!'
@@ -25,7 +39,7 @@ describe 'Admin register a transporter' do
     fill_in 'Domínio:', with: ''
     fill_in 'CNPJ:', with: ''
     fill_in 'Endereço:', with: ''
-    click_on 'Cadastrar Transportadora'
+    click_on 'Criar Transportadora'
 
     expect(page).to have_current_path transporters_path
     expect(page).to have_content 'Transportadora não cadastrada.'

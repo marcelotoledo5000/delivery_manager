@@ -1,7 +1,7 @@
 pt-BR:
   activerecord:
     models:
-      transporter: 'Transpotadora'
+      transporter: 'Transportadora'
     attributes:
       transporter:
         corporate_name: 'Nome Fantasia'
