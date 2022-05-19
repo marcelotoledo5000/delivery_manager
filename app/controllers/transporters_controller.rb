@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TransportersController < ApplicationController
-  before_action :set_transporter, only: %i[show]
+  before_action :set_transporter, only: %i[show edit update]
 
   def index
     @transporters = Transporter.all
@@ -24,6 +24,18 @@ class TransportersController < ApplicationController
       flash.now[notice] = 'Transportadora não cadastrada.'
 
       render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @transporter.update(transporter_params)
+      redirect_to @transporter, notice: 'Transportadora atualizada com sucesso!'
+    else
+      flash.now[notice] = 'Não foi possivel atualizar a transportadora.'
+
+      render :edit
     end
   end
 
